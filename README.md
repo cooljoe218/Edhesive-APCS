@@ -1,7 +1,7 @@
 #Edhesive AP Computer Science Solutions
 Code for every lesson and assignment for ~~Amplify's~~ Edhesive's AP Computer Science course.
 
-This repository is currently incomplete, so feel free to fork this project and add anything not here!
+This repository is currently incomplete, so feel free to send a pull request and add anything not here!
 
 Also, you should install one of these programs if you haven't already:
 
