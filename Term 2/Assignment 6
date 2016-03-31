@@ -1,0 +1,54 @@
+//Assignment 6
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.*;
+
+public class Main {
+  private ArrayList<String> list = new ArrayList<String>();
+  
+  public static String titleCase (String s) {
+    String namePart1 = s.substring(1,s.length());
+    String newNamePart1 = namePart1.toLowerCase();
+    String namePart2 = s.substring(0,1);
+    String newNamePart2 = namePart2.toUpperCase();
+    String newName = newNamePart2 + newNamePart1;
+    return newName;
+  }
+
+  public String toString(){
+    String returnString = "";
+    for (int i = 0; i<list.size(); i++){
+      String temp = list.get(i) + " ";
+      returnString+=temp;
+    }
+    return returnString;
+  }
+  public static void main (String[]args) {
+    Scanner pokemon = new Scanner (System.in);
+    ArrayList<String> nameList = new ArrayList<String>();
+    String name = "";
+    while (!(name.equalsIgnoreCase("Stop"))){
+      System.out.println("Enter the next name:");
+      name = pokemon.nextLine();
+      nameList.add(name);
+      for (int a = 1; a<nameList.size(); a++){
+        for (int b = a; b>0; b--){
+          if ((nameList.get(b)).compareToIgnoreCase(nameList.get(b-1))<0){
+            String temp = nameList.get(b);
+            nameList.set(b,(nameList.get(b-1)));
+            nameList.set((b-1),temp);
+          }
+        }
+      }
+      for (int t = 0; t<nameList.size(); t++) {
+        String temp1 = titleCase(nameList.get(t));
+        nameList.set(t,temp1);
+    }
+  }
+    for (int i = 0; i<nameList.size(); i++){
+      if ((nameList.get(i)).equalsIgnoreCase("Stop"))
+        nameList.remove(i);}
+    System.out.println(nameList.toString());
+}
+  
+}
